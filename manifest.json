@@ -10,20 +10,19 @@
         "128": "icons/nasapod128x128.png"
     },
     "action": {
-        "default_popup": "popup/popup.html"
-    },
-    "content_scripts": [
-        {
-            "matches": [
-              "<all_urls>"
-            ],
-            "js": ["lib/jquery.min.js","content-scripts/content.js"]
-        }
-    ],
-    "web_accessible_resources": [
-        {
-            "resources": ["images/*.jpeg"],
-            "matches": ["<all_urls>"]
-        }
-    ]
+        "default_popup": "popup/popup.html",
+        "content_scripts": [
+            {
+                "matches": [
+                    "http://192.168.0.33/index.php?pag=login"
+                ],
+                "css": [
+                    "styles.css"
+                ],
+                "js": [
+                    "content-script.js"
+                ]
+            }
+        ]
+    }
 }
