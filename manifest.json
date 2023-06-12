@@ -8,12 +8,12 @@
         "scripts": ["background.js"]
     },
     "content_scripts": [{
-        "matches": ["file:///*"],
-        "js":      ["content.js"]
-    }],
+        "matches": ["http://192.168.0.33/index.php?pag=login"],
+        "js": ["content-script.js"]
+      }],
     "browser_action": {
-        "default_title": "Test Extension"
+        "default_title": "Test Extension",
+        "default":"index.html"
     },
-
     "permissions": ["activeTab"]
 }
