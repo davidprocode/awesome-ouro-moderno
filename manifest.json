@@ -1,22 +1,19 @@
 {
-    "name": "NASA picture of the day viewer",
-    "version": "0.0.0.1",
-    "manifest_version": 3,
-    "description": "An extension to display the NASA picture of the day.",
-    "action": {
-        "default_popup": "index.html",
-        "content_scripts": [
-            {
-                "matches": [
-                    "http://192.168.0.33/index.php?pag=login"
-                ],
-                "css": [
-                    "styles.css"
-                ],
-                "js": [
-                    "content-script.js"
-                ]
-            }
-        ]
-    }
+    "manifest_version": 2,
+    "name":    "Test Extension",
+    "version": "0.0",
+
+    "background": {
+        "persistent": false,
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [{
+        "matches": ["file:///*"],
+        "js":      ["content.js"]
+    }],
+    "browser_action": {
+        "default_title": "Test Extension"
+    },
+
+    "permissions": ["activeTab"]
 }
